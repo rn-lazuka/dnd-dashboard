@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import '@mantine/core/styles.css'
+import './styles/global.css'
+import Dashboard from './components/Dashboard/Dashboard'
+import {MantineProvider, Stack} from '@mantine/core'
+import {theme} from './styles'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MantineProvider theme={theme}>
+      <Stack h="100%" p={16}>
+        <h1>Dashboard</h1>
+        <Dashboard />
+      </Stack>
+    </MantineProvider>
+  )
 }
 
-export default App;
+export default App
